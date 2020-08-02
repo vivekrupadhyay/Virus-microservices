@@ -1,0 +1,9 @@
+D:\Demo\Virus-Api\src\gateways\BackendGateway\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Demo\Virus-Api\src\gateways\BackendGateway\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Demo\Virus-Api\src\gateways\BackendGateway\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Demo\Virus-Api\src\gateways\BackendGateway\bin\Debug\netcoreapp3.1\BackendGateway.exe
+D:\Demo\Virus-Api\src\gateways\BackendGateway\obj\Debug\netcoreapp3.1\BackendGateway.AssemblyInfoInputs.cache
+D:\Demo\Virus-Api\src\gateways\BackendGateway\obj\Debug\netcoreapp3.1\BackendGateway.AssemblyInfo.cs
+D:\Demo\Virus-Api\src\gateways\BackendGateway\obj\Debug\netcoreapp3.1\BackendGateway.RazorTargetAssemblyInfo.cache
+D:\Demo\Virus-Api\src\gateways\BackendGateway\obj\Debug\netcoreapp3.1\staticwebassets\BackendGateway.StaticWebAssets.Manifest.cache
+D:\Demo\Virus-Api\src\gateways\BackendGateway\obj\Debug\netcoreapp3.1\staticwebassets\BackendGateway.StaticWebAssets.xml
