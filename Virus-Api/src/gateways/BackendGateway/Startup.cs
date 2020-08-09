@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -11,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using Middleware;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 using System.Text;
 
 namespace BackendGateway
@@ -28,7 +30,9 @@ namespace BackendGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration);//.AddConsul().AddConfigStoredInConsul();//
+
+
             var jwtSection = Configuration.GetSection("jwt");
             var jwtOptions = jwtSection.Get<JwtOptions>();
             var key = Encoding.UTF8.GetBytes(jwtOptions.Secret);
@@ -84,6 +88,15 @@ namespace BackendGateway
             app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
             await app.UseOcelot();
         }
     }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>6bbaaebf-1e40-4240-b8af-0a0d577ffe40</UserSecretsId>
+    <UserSecretsId>03873368-032e-4bcb-aa49-a6f2c7933493</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
@@ -13,14 +13,19 @@
 		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.1" />
 		<PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="3.1.1" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-		<PackageReference Include="Ocelot" Version="16.0.1" />
-		<PackageReference Include="Ocelot.Provider.Consul" Version="16.0.1" />
-		<PackageReference Include="Serilog" Version="2.10.0-dev-01221" />
-		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="4.0.0-dev-00839" />
+		<PackageReference Include="MongoDB.Driver" Version="2.11.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
 	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\..\middlewares\Middleware\Middleware.csproj" />
-	</ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Model\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\middlewares\Middleware\Middleware.csproj" />
+  </ItemGroup>
+
 
 </Project>

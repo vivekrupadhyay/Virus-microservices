@@ -1,5 +1,5 @@
 using HealthChecks.UI.Client;
-using IdentityMicroservice.Repository;
+using CompanyMicroservice.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -14,7 +14,7 @@ using Microsoft.OpenApi.Models;
 using Middleware;
 using MongoDB.Driver;
 
-namespace IdentityMicroservice
+namespace CompanyMicroservice
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace IdentityMicroservice
         {
             services.AddControllers();
             services.AddMongoDb(Configuration);
-            services.AddSingleton<IUserRepository>(sp => new UserRepository(sp.GetService<IMongoDatabase>()));
+            services.AddSingleton<ICompanyRepository>(sp => new CompanyRepository(sp.GetService<IMongoDatabase>()));
             services.AddJwt(Configuration);
             services.AddTransient<IEncryptor, Encryptor>();
             services.AddTransient<IJwtBuilder, JwtBuilder>();
@@ -48,8 +48,8 @@ namespace IdentityMicroservice
                 failureStatus: HealthStatus.Unhealthy
                 );
             services.AddHealthChecksUI().AddInMemoryStorage();
-            
-            
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +71,7 @@ namespace IdentityMicroservice
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Identity V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Company V1");
             });
 
             app.UseHttpsRedirection();

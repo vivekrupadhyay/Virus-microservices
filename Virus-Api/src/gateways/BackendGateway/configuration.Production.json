@@ -1,15 +1,51 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/catalog",
+      "DownstreamPathTemplate": "/api/v1/identity/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "catalog",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 44397
         }
       ],
-      "UpstreamPathTemplate": "/catalog",
+      "UpstreamPathTemplate": "/api/v1/identity/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/identity/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44397
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/identity/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/identity/getall",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44397
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/identity/getall",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/identity/changePassword",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44397
+        }
+      ],
+      "UpstreamPathTemplate": "/identity",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
@@ -17,15 +53,31 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/catalog/{id}",
+      "DownstreamPathTemplate": "/api/v1/identity/updateUser",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "catalog",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 44397
         }
       ],
-      "UpstreamPathTemplate": "/catalog/{id}",
+      "UpstreamPathTemplate": "/api/v1/identity/updateUser",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/identity/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44326
+        }
+      ],
+      "UpstreamPathTemplate": "/identity/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
@@ -33,24 +85,12 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/identity/login",
+      "DownstreamPathTemplate": "/api/v1/identity/validate",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "identity",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/identity/login",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/identity/validate",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "identity",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 44397
         }
       ],
       "UpstreamPathTemplate": "/identity/validate",
