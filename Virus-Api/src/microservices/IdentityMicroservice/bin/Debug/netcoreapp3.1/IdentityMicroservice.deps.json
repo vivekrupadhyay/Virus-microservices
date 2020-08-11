@@ -32,6 +32,7 @@
           "Middleware": "1.0.0",
           "MongoDB.Driver": "2.11.0",
           "Swashbuckle.AspNetCore": "5.5.1",
+          "Swashbuckle.AspNetCore.Annotations": "5.5.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1613,6 +1614,20 @@
           "Swashbuckle.AspNetCore.Swagger": "5.5.1",
           "Swashbuckle.AspNetCore.SwaggerGen": "5.5.1",
           "Swashbuckle.AspNetCore.SwaggerUI": "5.5.1"
+        }
+      },
+      "Swashbuckle.AspNetCore.Annotations/5.5.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.5.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "assemblyVersion": "5.5.1.0",
+            "fileVersion": "5.5.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Annotations.dll": {}
         }
       },
       "Swashbuckle.AspNetCore.Swagger/5.5.1": {
@@ -4707,6 +4722,13 @@
       "sha512": "sha512-M1CdrptwDw/9Es/W1twwM6w2W0I019uhMDA5q3LUQo4TYZblDipu/oO5gtUpe0tEh1UOdrxlZeQBhmJSTtAtnA==",
       "path": "swashbuckle.aspnetcore/5.5.1",
       "hashPath": "swashbuckle.aspnetcore.5.5.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Annotations/5.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WK3ni//iAfdt6dcSYA/ZEY2q3eW9HpGNoHYd2b2vVr74H1pI36C3cliJiAzzMXopcieeFgBBzGCfHuAiUUQEhA==",
+      "path": "swashbuckle.aspnetcore.annotations/5.5.1",
+      "hashPath": "swashbuckle.aspnetcore.annotations.5.5.1.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.Swagger/5.5.1": {
       "type": "package",

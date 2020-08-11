@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaveMicroservice", "src\mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayrollMicroservice", "src\microservices\PayrollMicroservice\PayrollMicroservice.csproj", "{5D9030FA-B783-4950-B985-641F9CD5298B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoleMicroservice", "src\microservices\RoleMicroservice\RoleMicroservice.csproj", "{72696568-4853-458E-B59E-FC53852CB3BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{5D9030FA-B783-4950-B985-641F9CD5298B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D9030FA-B783-4950-B985-641F9CD5298B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D9030FA-B783-4950-B985-641F9CD5298B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72696568-4853-458E-B59E-FC53852CB3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72696568-4853-458E-B59E-FC53852CB3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72696568-4853-458E-B59E-FC53852CB3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72696568-4853-458E-B59E-FC53852CB3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{814835C7-9B73-4237-AEFA-4D4F7644B4C9} = {042ED3CA-A7DF-444D-BF87-74D141194F79}
 		{854A7610-32DE-4698-8746-092605537E8B} = {042ED3CA-A7DF-444D-BF87-74D141194F79}
 		{5D9030FA-B783-4950-B985-641F9CD5298B} = {042ED3CA-A7DF-444D-BF87-74D141194F79}
+		{72696568-4853-458E-B59E-FC53852CB3BC} = {042ED3CA-A7DF-444D-BF87-74D141194F79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E9C2E20-DA7D-46EC-B9E4-9E0D1D7F62B2}

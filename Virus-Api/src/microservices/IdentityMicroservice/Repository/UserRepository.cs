@@ -21,6 +21,7 @@ namespace IdentityMicroservice.Repository
         public User GetUser(Guid userId) => user.Find(u => u.Id == userId).FirstOrDefault();
 
         public User GetUser(string email) => user.Find(u => u.Email == email).FirstOrDefault();
+        public User GetUserById(Guid id) => user.Find(u => u.Id == id).FirstOrDefault();
         public User Login(string email, string password, string companyCode)
         {
             var loginDetails = user.Find(u => u.Email == email && u.Password == password && u.CompanyCode == companyCode).FirstOrDefault();

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qzy3OcEEJiwVW4yigIpwCOfriivsGJij/MRrJEKSnxo5Wkq+gp5qSzKi7KJtMtrAgnNOsrVSlHZfdl0XK8EmMQ==",
+  "success": true,
+  "projectFilePath": "D:\\Demo\\Virus-Api\\src\\microservices\\LeaveMicroservice\\LeaveMicroservice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

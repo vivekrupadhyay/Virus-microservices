@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Asyg80iTFFdmtnVRyEhTMwCZA9rOKQpyLszZYUOf0TMZc/T6z2I8Da99OnejCW6lxLSYuk2eY/mi+HZMJ1pWkA==",
+  "success": true,
+  "projectFilePath": "D:\\Demo\\Virus-Api\\src\\microservices\\RoleMicroservice\\RoleMicroservice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

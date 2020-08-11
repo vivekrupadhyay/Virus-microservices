@@ -5,6 +5,8 @@ using IdentityMicroservice.Repository;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityMicroservice.Controllers
 {
@@ -41,7 +43,7 @@ namespace IdentityMicroservice.Controllers
             {
                 return BadRequest("Could not authenticate user.");
             }
-
+            //return Ok(userDetails);
         }
         [HttpPost("logout")]
         public async Task<IActionResult> CancelAccessToken()
@@ -131,5 +133,6 @@ namespace IdentityMicroservice.Controllers
             }
             return new NoContentResult();
         }
+
     }
 }
