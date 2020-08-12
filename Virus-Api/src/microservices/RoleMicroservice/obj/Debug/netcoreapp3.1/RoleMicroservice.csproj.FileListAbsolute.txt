@@ -1,0 +1,10 @@
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\bin\Debug\netcoreapp3.1\RoleMicroservice.exe
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\RoleMicroservice.csprojAssemblyReference.cache
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\RoleMicroservice.AssemblyInfoInputs.cache
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\RoleMicroservice.AssemblyInfo.cs
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\RoleMicroservice.RazorTargetAssemblyInfo.cache
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\RoleMicroservice.StaticWebAssets.Manifest.cache
+D:\Demo\Virus-Api\src\microservices\RoleMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\RoleMicroservice.StaticWebAssets.xml

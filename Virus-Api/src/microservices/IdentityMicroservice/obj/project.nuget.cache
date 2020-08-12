@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z8Pn3Tlm9aYzOh/YR0DoYD/7ZKJCOYxtlmzcuy72SJaLMSyI4k15xY2yzlpV/yu7hsqSa6VMhbXJeqbYUg0QDA==",
+  "dgSpecHash": "e3UuxDSoBOujAiDhM7uwE273aeTeYRaUanJoybck1n3aKUMoGo34YiNz8zjBcxYyRmOUmdVma2RgqR3nMaceeg==",
   "success": true,
   "projectFilePath": "D:\\Demo\\Virus-Api\\src\\microservices\\IdentityMicroservice\\IdentityMicroservice.csproj",
   "expectedPackageFiles": [
@@ -125,6 +125,7 @@
     "C:\\Users\\Upadhyay\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.2\\sqlitepclraw.provider.dynamic_cdecl.2.0.2.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
+    "C:\\Users\\Upadhyay\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\5.5.1\\swashbuckle.aspnetcore.annotations.5.5.1.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512",

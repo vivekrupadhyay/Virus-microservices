@@ -21,6 +21,7 @@ namespace Middleware
         private readonly IDistributedCache _cache;
         private readonly IHttpContextAccessor _httpContextAccessor;
         
+        
         public JwtBuilder(IOptions<JwtOptions> options , IDistributedCache cache,
             IHttpContextAccessor httpContextAccessor
             )
@@ -28,6 +29,7 @@ namespace Middleware
             _options = options.Value;
             _cache = cache;
             _httpContextAccessor = httpContextAccessor;
+          
         }
 
         public async Task<bool> IsCurrentActiveToken()
@@ -95,7 +97,6 @@ namespace Middleware
             var userId = new Guid(userIdClaim.Value);
             return userId;
         }
-
         private ClaimsPrincipal GetPrincipal(string token)
         {
             try
@@ -125,5 +126,6 @@ namespace Middleware
                 return null;
             }
         }
+       
     }
 }

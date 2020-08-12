@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "K+WiWzKN6CXuSSbzDx4MjfA4tMh5Xzc7GZioYMClFs/+qhrB9EdhLLS7AH65bjCveZd0ruJf/4XMugqsZ8v08w==",
+  "success": true,
+  "projectFilePath": "D:\\Demo\\Virus-Api\\src\\microservices\\PayrollMicroservice\\PayrollMicroservice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

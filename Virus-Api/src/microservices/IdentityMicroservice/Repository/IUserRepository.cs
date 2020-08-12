@@ -9,6 +9,7 @@ namespace IdentityMicroservice.Repository
         List<User> GetAllUser();
         User GetUser(Guid userid);
         User GetUser(string email);
+        User GetUserById(Guid id);
         User Login(string email, string password,string companyCode);
         void InsertUser(User user);
         void UpdateUser(User users);

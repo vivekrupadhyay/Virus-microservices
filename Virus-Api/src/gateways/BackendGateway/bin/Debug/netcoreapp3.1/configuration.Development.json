@@ -1,0 +1,34 @@
+{
+  "Routes": [
+    {
+      
+      "DownstreamPathTemplate": "/api/Identity/getall",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Identity",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/identity/validate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+      "UpstreamPathTemplate": "/Identity/validate",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:44319"
+  }
+}

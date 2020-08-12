@@ -25,6 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Demo\\dll": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,6 +67,10 @@
               "version": "[1.10.9, )"
             },
             "Ocelot": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Ocelot.Provider.Consul": {
               "target": "Package",
               "version": "[16.0.1, )"
             },
@@ -125,6 +130,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Demo\\dll": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
