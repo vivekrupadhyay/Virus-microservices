@@ -21,6 +21,7 @@ namespace IdentityMicroservice.Controllers
             _userRepository = userRepository;
             _jwtBuilder = jwtBuilder;
         }
+        [AllowAnonymous]
         [HttpPost("login")]
         public ActionResult<string> Login([FromBody] User user, [FromQuery(Name = "email")] string email, [FromQuery(Name = "CompanyCode")] string CompanyCode)
         {
