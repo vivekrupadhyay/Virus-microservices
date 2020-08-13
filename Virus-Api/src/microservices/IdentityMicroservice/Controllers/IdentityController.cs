@@ -68,7 +68,6 @@ namespace IdentityMicroservice.Controllers
             model.Email = user.Email;
             model.Password = EncryptionLibrary.EncryptText(user.Password);
             model.Mobile = user.Mobile;
-            model.RoleId = user.RoleId;
             model.RoleName = user.RoleName;
             model.CompanyCode = user.CompanyCode;
             model.CompanyName = user.CompanyName;
