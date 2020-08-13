@@ -8,11 +8,7 @@ namespace IdentityMicroservice.Model
     public class User
     {
         public static readonly string DocumentName = "users";
-        [SwaggerSchema("Primary key of Identity")]
-        [Required]
         public Guid Id { get; set; }
-        [Required]
-        [SwaggerSchema("First Name of User")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [SwaggerSchema("Email-ID of User")]
@@ -21,20 +17,11 @@ namespace IdentityMicroservice.Model
         [SwaggerSchema("Password of User")]
         [Required]
         public string Password { get; set; }
-        [SwaggerSchema("Mobile no. of User")]
-        [Required]
         public string Mobile { get; set; }
-        [SwaggerSchema("Role of User")]
-        [Required]
-        public Guid RoleId { get; set; }
-        [SwaggerSchema("Assigned role of User")]
-        [Required]
         public string RoleName { get; set; }
         [SwaggerSchema("Working company of user")]
         [Required]
         public string CompanyCode { get; set; }
-        [SwaggerSchema("Working company of user")]
-        [Required]
         public string CompanyName { get; set; }
         [SwaggerSchema("Working status of user")]
         public int IsActive { get; set; }

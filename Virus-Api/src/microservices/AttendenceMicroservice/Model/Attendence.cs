@@ -12,6 +12,7 @@ namespace AttendenceMicroservice.Model
         [Required]
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
+        public string CompanyCode { get; set; }
         public string CurrentAddress { get; set; }
         public string Remark { get; set; }
         public string AttendencePic { get; set; }

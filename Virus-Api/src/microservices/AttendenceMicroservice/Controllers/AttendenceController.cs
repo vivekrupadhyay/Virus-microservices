@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AttendenceMicroservice.Model;
 using AttendenceMicroservice.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -29,7 +30,7 @@ namespace AttendenceMicroservice.Controllers
         #region Controller
         [HttpPost(Name = "clockin")]
         [Authorize(Roles = "User, Admin")]
-        public IActionResult ClockIn()
+        public IActionResult ClockIn([FromBody] Attendence attendence, [FromQuery(Name = "userId")] string userId, [FromQuery(Name = "CompanyCode")] string CompanyCode)
         {
             return Ok();
         }

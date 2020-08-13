@@ -37,6 +37,7 @@ namespace IdentityMicroservice.Repository
                 .Set(c => c.Email, users.Email)
                 .Set(c => c.Password, users.Password)
                 .Set(c => c.Mobile, users.Mobile)
+                .Set(c => c.RoleName, users.RoleName)
                 .Set(c => c.CompanyCode, users.CompanyCode)
                 .Set(c => c.CompanyName, users.CompanyName)
                 .Set(c => c.IsActive, users.IsActive)
