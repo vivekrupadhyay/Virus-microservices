@@ -14,6 +14,7 @@ namespace AttendenceMicroservice.Model
         public string SwipeCategoty { get; set; }//SwipeReq,WFH
         public string SwiftCode { get; set; }
         public string Mode { get; set; }//In,Out,Both
+        public string IpAddress { get; set; }
         public DateTime InTime { get; set; }
         public DateTime OutTime { get; set; }
         public string Reason { get; set; }

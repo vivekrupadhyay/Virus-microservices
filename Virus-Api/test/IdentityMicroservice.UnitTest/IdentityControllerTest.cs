@@ -16,8 +16,8 @@ namespace IdentityMicroservice.UnitTest
         private readonly IdentityController _controller;
         private readonly List<User> _users = new List<User>
         {
-            new User{ Id = new Guid("b4f431d7-2653-4ec9-a34c-d4035e74c663"), Email= "user@store.com", Password = "tabSdQLDL9r29Mek9PvWnw9kM61CT3klw0pOZBQhAskqW11/4zpEpA==", Salt = "BCHatrzmOgciBaIW/DjLgw/lCCbBNNWxGvL1C25mZHaxgTBAfolOVA==", IsAdmin= false},
-            new User{ Id = new Guid("0228f78e-1e6e-4929-9f2d-3986403ca84f"), Email= "admin@store.com", Password = "tabSdQLDL9r29Mek9PvWnw9kM61CT3klw0pOZBQhAskqW11/4zpEpA==", Salt = "BCHatrzmOgciBaIW/DjLgw/lCCbBNNWxGvL1C25mZHaxgTBAfolOVA==", IsAdmin= true}
+            new User{ Id = new Guid("b4f431d7-2653-4ec9-a34c-d4035e74c663"), Email= "user@store.com", Password = "tabSdQLDL9r29Mek9PvWnw9kM61CT3klw0pOZBQhAskqW11/4zpEpA=="},
+            new User{ Id = new Guid("0228f78e-1e6e-4929-9f2d-3986403ca84f"), Email= "admin@store.com", Password = "tabSdQLDL9r29Mek9PvWnw9kM61CT3klw0pOZBQhAskqW11/4zpEpA=="}
         };
 
         public IdentityControllerTest()
@@ -67,28 +67,28 @@ namespace IdentityMicroservice.UnitTest
                 }
                 return string.Empty;
             });
-            _controller = new IdentityController(mockRepo.Object, mockJwtBuilder.Object, mockEncryptor.Object);
+            _controller = new IdentityController(mockRepo.Object, mockJwtBuilder.Object);
         }
 
         [Fact]
         public void LoginTest()
         {
             var user = new User { Email = "user@store.com", Password = "pass" };
-            var okObjectResult = _controller.Login(user);
+            var okObjectResult = _controller.Login(user,"vivek@gmail.com","Chenoa");
             var okResult = Assert.IsType<OkObjectResult>(okObjectResult.Result);
             var token = Assert.IsType<string>(okResult.Value);
             Assert.Equal("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjFlYjFmYi01NjBlLTRjMGUtYmJiMC01OTFhNWQ4NWMzN2EiLCJleHAiOjE1OTMxODQxMDV9.k2t0qhvq6XMJAPA32xFH2hC6BY_6PC9jYay9RKEGcws", token);
             var user2 = new User { Email = "user2@store.com", Password = "pass" };
-            okObjectResult = _controller.Login(user2);
+            okObjectResult = _controller.Login(user, "vivek@gmail.com", "Chenoa");
             Assert.IsType<NotFoundObjectResult>(okObjectResult.Result);
             user.Password = "pass2";
-            okObjectResult = _controller.Login(user);
+            okObjectResult = _controller.Login(user, "vivek@gmail.com", "Chenoa");
             Assert.IsType<BadRequestObjectResult>(okObjectResult.Result);
             user.Password = "pass";
-            okObjectResult = _controller.Login(user, "backend");
+            okObjectResult = _controller.Login(user, "vivek@gmail.com", "Chenoa");
             Assert.IsType<BadRequestObjectResult>(okObjectResult.Result);
             var admin = new User { Email = "admin@store.com", Password = "pass" };
-            okObjectResult = _controller.Login(admin, "backend");
+            okObjectResult = _controller.Login(admin, "vivek@gmail.com", "Chenoa");
             okResult = Assert.IsType<OkObjectResult>(okObjectResult.Result);
             token = Assert.IsType<string>(okResult.Value);
             Assert.Equal("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlM2YxZjk0OS0yYzYwLTQwMmMtYmUwMi1lMzVkMTQwMDQwYTEiLCJleHAiOjE1OTMxODQxMzN9.3dhkOAY0duDSDYX5m9GHaA4qezHSrtnZvt436cPD3LE", token);

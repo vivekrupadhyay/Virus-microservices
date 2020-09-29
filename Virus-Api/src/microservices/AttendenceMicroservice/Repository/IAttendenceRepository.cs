@@ -8,12 +8,15 @@ namespace AttendenceMicroservice.Repository
 {
     public interface IAttendenceRepository
     {
+        IEnumerable<Attendence> GetAll();
+        void ClockIn(Attendence attendence);
+        void ClockOut(Attendence model);
 
-
-        Task<IEnumerable<Attendence>> GetAll();
-        Task<Attendence> GetAttendenceByUser(Guid userid);
-        Task ClockIn(Attendence attendence);
-        Task ClockOut(Attendence attendence);
+        //Attendence GetAttendenceByUser(Guid userid);
+        //Task<IEnumerable<Attendence>> GetAll();
+        //Task<Attendence> GetAttendenceByUser(Guid userid);
+        //Task ClockIn(Attendence attendence);
+        //Task ClockOut(Attendence attendence);
         //Task<bool> UpdatePrice(Attendence attendence);
         //Task<DeleteResult> RemoveProduct(string name);
         //Task<DeleteResult> RemoveAllProducts();

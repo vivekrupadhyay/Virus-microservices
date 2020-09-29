@@ -10,9 +10,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Middleware;
 using MongoDB.Driver;
+using Newtonsoft.Json.Serialization;
+using System;
+using System.Text;
 
 namespace IdentityMicroservice
 {
@@ -28,7 +32,9 @@ namespace IdentityMicroservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            // services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(setupAction => { setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); })
+            .AddXmlDataContractSerializerFormatters();
             services.AddMongoDb(Configuration);
             services.AddSingleton<IUserRepository>(sp => new UserRepository(sp.GetService<IMongoDatabase>()));
             services.AddJwt(Configuration);
@@ -48,8 +54,18 @@ namespace IdentityMicroservice
                 failureStatus: HealthStatus.Unhealthy
                 );
             services.AddHealthChecksUI().AddInMemoryStorage();
-            
-            
+
+
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("User",
+            //        authBuilder =>
+            //        {
+            //            authBuilder.RequireRole("User");
+            //        });
+            //});
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

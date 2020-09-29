@@ -1,0 +1,9 @@
+D:\Demo\Virus-Api\src\core\CoreCommon\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Demo\Virus-Api\src\core\CoreCommon\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Demo\Virus-Api\src\core\CoreCommon\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\CoreCommon.csprojAssemblyReference.cache
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\CoreCommon.AssemblyInfoInputs.cache
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\CoreCommon.AssemblyInfo.cs
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\CoreCommon.RazorTargetAssemblyInfo.cache
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\staticwebassets\CoreCommon.StaticWebAssets.Manifest.cache
+D:\Demo\Virus-Api\src\core\CoreCommon\obj\Debug\netcoreapp3.1\staticwebassets\CoreCommon.StaticWebAssets.xml

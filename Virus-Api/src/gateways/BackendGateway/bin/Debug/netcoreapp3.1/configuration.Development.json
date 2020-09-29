@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      
+
       "DownstreamPathTemplate": "/api/Identity/getall",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -12,12 +12,94 @@
       ],
 
       "UpstreamPathTemplate": "/Identity",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "RouteIsCaseSensitive": false,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/Identity/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Identity/login",
+      "UpstreamHttpMethod": [ "Post" ]
 
     },
     {
+
+      "DownstreamPathTemplate": "/api/Identity/logout",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Identity/logout",
+      "UpstreamHttpMethod": [ "Post" ]
+
+    },
+
+    {
+
+      "DownstreamPathTemplate": "/api/Identity/register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Identity/register",
+      "UpstreamHttpMethod": [ "Post" ]
+
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/Identity/deleteUser/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Identity/deleteUser",
+      "UpstreamHttpMethod": [ "Post" ]
+
+    },
+    
+    {
+      "DownstreamPathTemplate": "/api/Identity/changePassword",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+      "UpstreamPathTemplate": "/Identity/changePassword",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/identity/validate",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -26,6 +108,55 @@
       ],
       "UpstreamPathTemplate": "/Identity/validate",
       "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Attendence/clockin",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44302
+        }
+      ],
+      "UpstreamPathTemplate": "/clockin",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Attendence/clockout",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44302
+        }
+      ],
+      "UpstreamPathTemplate": "/clockout",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Attendence/Attendencelist",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44302
+        }
+      ],
+      "UpstreamPathTemplate": "/attendencelist",
+      "UpstreamHttpMethod": [ "POST" ] //,
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //}
     }
   ],
   "GlobalConfiguration": {

@@ -7,19 +7,28 @@ using MongoDB.Bson;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace IdentityMicroservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
     public class IdentityController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
         private readonly IJwtBuilder _jwtBuilder;
-        public IdentityController(IUserRepository userRepository, IJwtBuilder jwtBuilder)
+        private readonly JwtOptions _options;
+        public IdentityController(IUserRepository userRepository, IJwtBuilder jwtBuilder, IOptions<JwtOptions> options)
         {
             _userRepository = userRepository;
             _jwtBuilder = jwtBuilder;
+            _options = options.Value;
         }
         [AllowAnonymous]
         [HttpPost("login")]
@@ -34,11 +43,29 @@ namespace IdentityMicroservice.Controllers
 
             if (userDetails.RoleName == "Admin")
             {
-                return Ok(_jwtBuilder.GetToken(userDetails.Id));
+                return Ok(_jwtBuilder.GetToken(userDetails.Id,userDetails.RoleName));
             }
             else if (userDetails.RoleName == "User")
             {
-                return Ok(_jwtBuilder.GetToken(userDetails.Id));
+                //return Ok(_jwtBuilder.GetToken(userDetails.Id));
+                //return Ok(_jwtBuilder.GetToken(userDetails.Id, userDetails.RoleName));
+                
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.UTF8.GetBytes(_options.Secret);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                    new Claim(ClaimTypes.Name, userDetails.Id.ToString()),
+                    new Claim(ClaimTypes.Role, userDetails.RoleName)
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                user.Token = tokenHandler.WriteToken(token);
+
+                return userDetails.Token;
             }
             else
             {
@@ -79,10 +106,11 @@ namespace IdentityMicroservice.Controllers
             return Ok();
         }
         [HttpGet("getall")]
+        [Authorize(Roles ="User")]
         public ActionResult GetAllUser()
         {
             var users = _userRepository.GetAllUser();
-            
+
 
             return Ok(users);
         }
@@ -122,6 +150,7 @@ namespace IdentityMicroservice.Controllers
             _userRepository.DeleteUser(id);
             return new OkResult();
         }
+        //[Authorize(Roles = "Admin")]
         [HttpPut("changePassword")]
         public ActionResult change([FromBody] string email, string oldPassword, string newPassword)
         {

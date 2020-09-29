@@ -9,7 +9,7 @@ namespace AttendenceMicroservice.Model
     public class Attendence
     {
         public static readonly string DocumentName = "attendence";
-        [Required]
+        //[Required]
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public string CompanyCode { get; set; }
@@ -19,8 +19,8 @@ namespace AttendenceMicroservice.Model
         public string IPAddress { get; set; }
         public string Latitude { get; set; }
         public string longitude { get; set; }
-        public DateTime? ClockIn { get; set; }
-        public DateTime? ClockOut { get; set; }
+        public DateTime ClockIn { get; set; }
+        public DateTime ClockOut { get; set; }
         public bool IsSortTime { get; set; }
         public bool IsSwipePending { get; set; }
         public bool IsSwipeApproved { get; set; }

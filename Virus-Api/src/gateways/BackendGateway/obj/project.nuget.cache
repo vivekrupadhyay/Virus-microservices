@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DTjUalWWmBCF3XCA4KK9tmddbjWlyFgHNj8gm0fdIsYgdMTjphjyyYphdWPifXuFr7mh7UmDlj2MBWhTxyaleA==",
+  "dgSpecHash": "anRIlLGJVMFWwXKUo/h5My48LmZRpyNS8ZgOdxCERSO1uLni2PRO/G7UXf/E+aJfSHAG6kFaYNSzDCUT0IeN6A==",
   "success": true,
   "projectFilePath": "D:\\Demo\\Virus-Api\\src\\gateways\\BackendGateway\\BackendGateway.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,7 @@
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
-    "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
+    "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.7\\microsoft.aspnetcore.authentication.jwtbearer.3.1.7.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.diagnostics\\2.2.0\\microsoft.aspnetcore.diagnostics.2.2.0.nupkg.sha512",
     "C:\\Users\\Upadhyay\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.2.0\\microsoft.aspnetcore.diagnostics.abstractions.2.2.0.nupkg.sha512",

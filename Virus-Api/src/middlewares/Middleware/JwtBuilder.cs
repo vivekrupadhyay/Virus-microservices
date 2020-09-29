@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
@@ -20,16 +22,24 @@ namespace Middleware
         private readonly JwtOptions _options;
         private readonly IDistributedCache _cache;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        
-        
-        public JwtBuilder(IOptions<JwtOptions> options , IDistributedCache cache,
+
+
+        public JwtBuilder(IOptions<JwtOptions> options, IDistributedCache cache,
             IHttpContextAccessor httpContextAccessor
             )
         {
             _options = options.Value;
             _cache = cache;
             _httpContextAccessor = httpContextAccessor;
-          
+
+        }
+        public Action<AuthenticationOptions> AuthenticationOptions()
+        {
+            return options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            };
         }
 
         public async Task<bool> IsCurrentActiveToken()
@@ -68,6 +78,21 @@ namespace Middleware
             var claims = new Claim[]
             {
                 new Claim("userId",userId.ToString()),
+            };
+            var expirationDate = DateTime.Now.AddMinutes(_options.ExpiryMinutes);
+            var jwt = new JwtSecurityToken(claims: claims, signingCredentials: signinCredentials, expires: expirationDate);
+            var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+            return encodedJwt;
+        }
+        public string GetToken(Guid userId,string role)
+        {
+            var signinKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.Secret));
+            var signinCredentials = new SigningCredentials(signinKey, SecurityAlgorithms.HmacSha256);
+            var claims = new Claim[]
+            {
+                new Claim("userId",userId.ToString()),
+                new Claim("role",role.ToString()),
             };
             var expirationDate = DateTime.Now.AddMinutes(_options.ExpiryMinutes);
             var jwt = new JwtSecurityToken(claims: claims, signingCredentials: signinCredentials, expires: expirationDate);
@@ -126,6 +151,6 @@ namespace Middleware
                 return null;
             }
         }
-       
+
     }
 }

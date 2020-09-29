@@ -25,6 +25,7 @@ namespace IdentityMicroservice.Model
         public string CompanyName { get; set; }
         [SwaggerSchema("Working status of user")]
         public int IsActive { get; set; }
+        public string Token { get; set; }
         [SwaggerSchema("User when get registered.")]
         public DateTime WhenEntered { get; set; } = DateTime.UtcNow;
         [SwaggerSchema("User when get registered by whome ?")]

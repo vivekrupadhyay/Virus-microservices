@@ -16,6 +16,7 @@ namespace IdentityMicroservice.Repository
         public UserRepository(IMongoDatabase database)
         {
             user = database.GetCollection<User>(User.DocumentName);
+            
         }
         public List<User> GetAllUser() => user.Find(FilterDefinition<User>.Empty).ToList();// user.AsQueryable<User>().Select(c => c).ToList();
         public User GetUser(Guid userId) => user.Find(u => u.Id == userId).FirstOrDefault();

@@ -7,14 +7,6 @@ D:\POC\Virus-Api\Middleware\bin\Debug\netcoreapp3.1\Middleware.pdb
 D:\POC\Virus-Api\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
 D:\POC\Virus-Api\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb
 D:\POC\Virus-Api\Middleware\obj\Debug\netcoreapp3.1\Middleware.csproj.CoreCompileInputs.cache
-D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.deps.json
-D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.dll
-D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.pdb
-D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.AssemblyInfoInputs.cache
-D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.AssemblyInfo.cs
-D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.csproj.CoreCompileInputs.cache
-D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
-D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.deps.json
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.dll
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.pdb
@@ -24,4 +16,12 @@ D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\obj\Debug\netco
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.csproj.CoreCompileInputs.cache
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
 D:\Demo\backup-api\10-08-20\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb
+D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.deps.json
+D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.dll
+D:\Demo\Virus-Api\src\middlewares\Middleware\bin\Debug\netcoreapp3.1\Middleware.pdb
+D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.AssemblyInfoInputs.cache
+D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.AssemblyInfo.cs
+D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.csproj.CoreCompileInputs.cache
+D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
+D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb
 D:\Demo\Virus-Api\src\middlewares\Middleware\obj\Debug\netcoreapp3.1\Middleware.csprojAssemblyReference.cache

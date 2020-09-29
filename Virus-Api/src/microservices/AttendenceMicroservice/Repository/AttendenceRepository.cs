@@ -1,4 +1,5 @@
 ﻿using AttendenceMicroservice.Model;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -14,23 +15,27 @@ namespace AttendenceMicroservice.Repository
         {
             attendence = database.GetCollection<Attendence>(Attendence.DocumentName);
         }
-        public async Task ClockIn(Attendence model)
+        public void ClockIn(Attendence model)
         {
-            await attendence.InsertOneAsync(model);
+             attendence.InsertOne(model);
+             
         }
-        public async Task ClockOut(Attendence model)
+        public void ClockOut(Attendence model)
         {
-            await attendence.InsertOneAsync(model);
+            attendence.InsertOne(model);
+           
         }
-        public async Task<IEnumerable<Attendence>> GetAll()
+        public IEnumerable<Attendence> GetAll()
         {
-            return await attendence.Find(x => true).ToListAsync();
+            var query = attendence.AsQueryable<Attendence>().Select(c => c).ToList();
+            return query;
+            //return await attendence.Find(x => true).ToListAsync();
         }
-        public async Task<Attendence> GetAttendenceByUser(Guid userid)
-        {
-            //return await attendence.Find(u => u.UserId == userid).FirstOrDefaultAsync();
-            var filter = Builders<Attendence>.Filter.Eq("UserId", userid);
-            return await attendence.Find(filter).FirstOrDefaultAsync();
-        }
+        //public async Task<Attendence> GetAttendenceByUser(Guid userid)
+        //{
+        //    //return await attendence.Find(u => u.UserId == userid).FirstOrDefaultAsync();
+        //    var filter = Builders<Attendence>.Filter.Eq("UserId", userid);
+        //    return await attendence.Find(filter).FirstOrDefaultAsync();
+        //}
     }
 }

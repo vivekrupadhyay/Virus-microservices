@@ -7,6 +7,6 @@ namespace Middleware
         public string Secret { get; set; }
         public int ExpiryMinutes { get; set; }
 
-
+        public string TOKEN_ISSUER { get; set; }
     }
 }

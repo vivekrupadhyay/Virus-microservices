@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using AttendenceMicroservice.Model;
@@ -13,6 +14,7 @@ namespace AttendenceMicroservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AttendenceController : ControllerBase
     {
         #region Field
@@ -28,23 +30,64 @@ namespace AttendenceMicroservice.Controllers
         #endregion
 
         #region Controller
-        [HttpPost(Name = "clockin")]
+        [HttpPost("clockin")]
         [Authorize(Roles = "User, Admin")]
-        public IActionResult ClockIn([FromBody] Attendence attendence, [FromQuery(Name = "userId")] string userId, [FromQuery(Name = "CompanyCode")] string CompanyCode)
+        public IActionResult ClockIn([FromBody] Attendence attendence)//, [FromQuery(Name = "userId")] string userId, [FromQuery(Name = "CompanyCode")] string CompanyCode)
         {
+            Attendence model = new Attendence();
+            if (attendence != null)
+            {
+                model.UserId = attendence.UserId;
+                model.ClockIn = DateTime.SpecifyKind(attendence.ClockIn, DateTimeKind.Local);
+                model.ClockOut = DateTime.SpecifyKind(attendence.ClockOut, DateTimeKind.Local);
+                model.CompanyCode = attendence.CompanyCode;
+                model.CurrentAddress = attendence.CurrentAddress;
+                model.AttendencePic = attendence.AttendencePic;
+                model.EnteredBy = attendence.EnteredBy;
+                model.IPAddress = attendence.IPAddress;
+                model.IsSortTime = attendence.IsSortTime;
+                model.IsSwipeApproved = attendence.IsSwipeApproved;
+                model.IsSwipePending = attendence.IsSwipePending;
+                model.Latitude = attendence.Latitude;
+                model.longitude = attendence.longitude;
+                model.Remark = attendence.Remark;
+                _attenRepository.ClockIn(attendence);
+            }
+            
             return Ok();
         }
-        [HttpPost(Name = "clockout")]
+        [HttpPost("clockout")]
         [Authorize(Roles = "User, Admin")]
-        public IActionResult ClockOut()
+        public IActionResult ClockOut([FromBody] Attendence attendence, [FromQuery(Name = "userId")] string userId, [FromQuery(Name = "CompanyCode")] string CompanyCode)
         {
+            Attendence model = new Attendence();
+            if (attendence != null)
+            {
+                model.UserId = attendence.UserId;
+                model.ClockIn = DateTime.SpecifyKind(attendence.ClockIn, DateTimeKind.Local);
+                model.ClockOut = DateTime.SpecifyKind(attendence.ClockOut, DateTimeKind.Local);
+                model.CompanyCode = attendence.CompanyCode;
+                model.CurrentAddress = attendence.CurrentAddress;
+                model.AttendencePic = attendence.AttendencePic;
+                model.EnteredBy = attendence.EnteredBy;
+                model.IPAddress = attendence.IPAddress;
+                model.IsSortTime = attendence.IsSortTime;
+                model.IsSwipeApproved = attendence.IsSwipeApproved;
+                model.IsSwipePending = attendence.IsSwipePending;
+                model.Latitude = attendence.Latitude;
+                model.longitude = attendence.longitude;
+                model.Remark = attendence.Remark;
+                _attenRepository.ClockOut(model);
+            }
+
             return Ok();
         }
-        [HttpGet(Name = "attendencelist")]
+        [HttpGet("attendencelist")]
         [Authorize(Roles = "User, Admin")]
-        public IActionResult AttenenceList()
+        public async Task<IActionResult> AttenenceList()
         {
-            return Ok();
+            var result = await Task.FromResult(_attenRepository.GetAll());
+            return Ok(result);
         }
         #endregion
     }
